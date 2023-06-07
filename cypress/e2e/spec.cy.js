@@ -7,6 +7,7 @@ describe("DemoQA", () => {
     });
 
     it("Fill out form, submit and validate", () =>{
+      //Data Input
       FormPage.firstName.type("John");
       FormPage.lastName.type("Doe");
       FormPage.email.type("example@email.com");
@@ -26,6 +27,7 @@ describe("DemoQA", () => {
       FormPage.stateAndCity.contains("Select City").click({force:true});
       FormPage.delhi.click({force: true});
       FormPage.submitButton.click({force: true});
+      //Validation
       FormPage.formTable.contains("td", "John Doe")
       FormPage.formTable.contains("td", "example@email.com")
       FormPage.formTable.contains("td", "Male")
